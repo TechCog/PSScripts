@@ -44,20 +44,7 @@ try {
 } catch {
 Write-Host "No current session detected. Please supply credentials to connect to Microsoft Online Service"
 Connect-MsolService
-
 }
-
-try
-{
-    Get-MsolDomain -ErrorAction Stop > $null
-}
-catch 
-{
-    if ($cred -eq $null) {$cred = Get-Credential $O365Adminuser}
-    Write-Output "Connecting to Office 365..."
-    Connect-MsolService -Credential $cred
-}
-
 
 $Result = @()
 $Results = @()
