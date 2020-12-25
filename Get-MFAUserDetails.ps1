@@ -1,4 +1,4 @@
-﻿<#
+<#
 .Synopsis
   Script to get details of MFA enabled users.
 
@@ -12,12 +12,12 @@
   It is recommended that you run this script in  your lab before using in production.
 
 .EXAMPLE
-This example will give MFA details of supllied UPN "User@domain.com"
+This example will give MFA details of supplied UPN "User@domain.com"
 
    Get-MFAUserDetails -UPN User@domain.com
 
 .EXAMPLE
-This example will give MFA details of users supllied in "MFAUPN.txt" file, one UPN per line, without any header. 
+This example will give MFA details of users supplied in "MFAUPN.txt" file, one UPN per line, without any header. 
 
  Get-MFAUserDetails -UserList C:\temp\MFAUPN.txt
 
@@ -42,7 +42,7 @@ Write-Host "Checking Current MsolService Session"
 try {
     Get-MsolDomain -ErrorAction Stop | Out-Null
 } catch {
-Write-Host "No current session detected. Please supply credentails to connect to Microsoft Online Service"
+Write-Host "No current session detected. Please supply credentials to connect to Microsoft Online Service"
 Connect-MsolService
 
 }
@@ -115,5 +115,5 @@ Write-Host "Results are saved in File $Location" -ForegroundColor Yellow
          }
            Else
            {
-           Write-Host "Please input atleast one parameter, check help for details."
+           Write-Host "Please input at least one parameter, check help for details."
            }
